@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Input Page</title>
+  <link rel="stylesheet" href="input.css">
+</head>
+<body>
+<div class="container">
+
+<div id="downloadStatus" class="download-status hidden">
+  <div class="loader"></div>
+  <p id="downloadMessage">Preparing Download...</p>
+</div>
+
+    <div class="theme-icon">
+      <span id="themeIcon">L</span>
+    </div>
+    <h1>My User Bio</h1>
+    <div class="input-form">
+      <form id="inputForm">
+        <label>Profile Picture</label>
+        <input type="file" id="photoInput" accept="image/*"><br>
+        <label>FirstName:</label>
+        <input type="text" id="firstName" placeholder="Enter Your FirstName"><br>
+        <label>LastName:</label>
+        <input type="text" id="lastName" placeholder="Enter Your LastName"><br>
+        <label>Age:</label>
+        <input type="number" id="ageInput" placeholder="Enter Your Age">
+        <div>
+          <button type="submit">Show Bio</button>
+          <button id="clearBtn">Clear Bio</button>
+          
+        </div>
+      </form>
+    </div>
+    <div class="output">
+      <p id="userOutput"></p>
+    </div>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="input.js"></script>
+</body>
+</html>

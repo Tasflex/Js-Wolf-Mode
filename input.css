@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-bg : rgb(255, 255, 255);
+    --container-bg: gray;
+    --inputform-bg: rgb(121, 116, 116);
+    --inputfields-bg: white;
+    --input-text: black;
+    --buttons-bg: white;
+    --buttonshover-bg : black;
+    --buttonstext-color : black;
+    --buttonstext-hover:white;
+    --useroutput-bg: white;
+    --useroutput-text: rgb(0, 0, 0);
+}
+
+.dark-mode{
+    --primary-bg : rgb(0, 0, 0);
+    --container-bg: rgb(0, 0, 0);
+    --inputform-bg: rgb(0, 0, 0);
+    --inputfields-bg: white;
+    --input-text: rgb(255, 255, 255);
+    --buttons-bg: rgb(0, 0, 0);
+    --buttonshover-bg : rgb(255, 255, 255);
+    --buttonstext-color : rgb(255, 255, 255);
+    --buttonstext-hover:rgb(0, 0, 0);
+    --useroutput-bg: rgb(0, 0, 0);
+    --useroutput-text: white;
+}
+
+body{
+    background-color: var(--primary-bg);
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   margin: 10%;
+   color: var(--input-text);
+}
+
+.container{
+    background-color: var(--container-bg);
+    height: auto;
+    margin: 30% 30%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 18px rgb(33, 39, 20);
+    transition: transform 0.3s ease;
+}
+/* .container:hover{
+    transform: scale(1.05);
+} */
+
+.input-form{
+    background-color: var(--inputform-bg);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px black;
+}
+
+input{
+    padding: 7px;
+    border-radius: 10px;
+}
+
+button{
+    background-color: var(--buttons-bg);
+    color: var(--buttonstext-color);
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 6px;
+}
+
+button:hover{
+    background-color: var(--buttonshover-bg);
+    color: var(--buttonstext-hover);
+}
+
+.output{
+    background-color: var(--useroutput-bg);
+    color: var(--useroutput-text);
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.theme-icon{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#themeIcon{
+    cursor: pointer;
+    font-size: 34px;
+    transition: transform 0.3s ease;
+}
+#themeIcon:hover{
+   transform: rotate(30deg);
+}
+
+.profile-pic{
+    
+    width: 100px;
+    height: 100px;
+    border-radius : 50%;
+    object-fit: cover;
+    border: 3px solid yellowgreen;
+    margin-bottom : 10px;
+    display: block;
+}
+
+/* Download  */
+.download-status{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--primary-bg);
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px brown;
+    text-align: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+.hidden{
+    display: none;
+}
+
+.download-status p{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* loader */
+.loader{
+    border: 4px solid var(--primary-bg);
+    border-top: 4px solid green;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin{
+    100%{transform: rotate(30deg)}
+}
+
+/* success message animation */
+@keyframes fadeOut{
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+
+/* Theme Buttons */
+.theme-buttons{
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
+
+.theme-button{
+    padding: 8px 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+/* Add theme presets real colors */
+.theme-btn[data-theme="blue"]{
+    background: #2196f3;
+    color: white;
+}
+.theme-btn[data-theme ="blue"]:hover{
+    background: #1e88e5;
+}
+
+.theme-btn[data-theme = "red"]{
+    background: maroon;
+    color:white;
+}
+.theme-btn[data-theme="red"]:hover{
+    background: darkred;
+}
+
+.theme-btn[data-theme = "green"]{
+  background: lightgreen;
+  color: white;
+}
+.theme-btn[data-theme="green"]:hover{
+    background: darkgreen;
+}
+
+.theme-btn[data-theme = "purple"]{
+    background: #9c27b0;
+    color: white;
+}
+.theme-btn[data-theme="purple"]:hover{
+    background: rgb(206, 34, 206);
+}
+
+.theme-btn[data-theme="gold"]{
+    background: goldenrod;
+    color: #ffffff;
+}
+.theme-btn[data-theme="gold"]{
+    background: hsl(44, 97%, 30%);
+}
+
+
+h3{
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+/* Media Queries */
+
+
+
+@media(max-width: 1024px){
+    .container{
+        width: 70%;
+        height: 50vh;
+    }
+
+
+}
+
+@media(max-width: 768px){
+    .container{
+        width: 100%;
+        height: 50vh;
+    }
+    h1{
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-bottom: 5px;
+    }
+    label{
+        font-size: 20px;
+    }
+}
