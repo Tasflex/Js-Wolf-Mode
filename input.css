@@ -199,7 +199,7 @@ button:hover{
   color: white;
 }
 .theme-btn[data-theme="green"]:hover{
-    background: darkgreen;
+    background: rgb(13, 49, 13);
 }
 
 .theme-btn[data-theme = "purple"]{
@@ -225,6 +225,10 @@ h3{
 }
 /* Media Queries */
 
+.theme-btn.active {
+  outline: 3px solid rgb(229, 255, 0);
+  transform: scale(1.05);
+}
 
 
 @media(max-width: 1024px){

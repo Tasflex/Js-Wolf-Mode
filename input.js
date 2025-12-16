@@ -12,16 +12,21 @@ const clearBtn = document.getElementById("clearBtn");
 const userOutput = document.getElementById("userOutput");
 
 // Theme Toggle.
-themeIcon.addEventListener("click", () => {
+themeIcon.addEventListener("click", ()=>{
     appState.darkMode = !appState.darkMode;
 
-    document.body.classList.toggle("dark-mode", appState.darkMode);
-    themeIcon.textContent = appState.darkMode ? "D" : "L";
+    document.body.classList.toggle("dark-mode", appState.darkMode)
+    themeIcon.textContent = appState.darkMode ? "D":"L";
 
-    localStorage.setItem("theme", appState.darkMode ? "D":"L");
+    localStorage.setItem("theme", appState.darkMode ? "dark":"light")
 
-    const savedTheme = localStorage.setItem("selectedTheme");
-    if(savedTheme)applyTheme(savedTheme);
+    const savedTheme = localStorage.getItem("selectedTheme");
+
+    if(savedTheme){
+        const activeBtn = document.querySelector(`theme-btn[data-theme ="${savedTheme}"]`)
+        if(activeBtn)activeBtn.classList.add("active")
+        
+    }
 })
 
 
@@ -129,16 +134,19 @@ function displayBio(user){
 
     attachPresetEvents() 
 
-    const randomBtn = document.getElementById("randomThemeBtn");
+  const randomBtn = document.getElementById("randomThemeBtn");
+randomBtn.addEventListener("click",()=>{
 
-    randomBtn.addEventListener("click", () =>{
-        const themes = Object.keys(themePresets);
-        const randomIndex = Math.floor(Math.random()*themes.length);
-        const randomTheme = themes[randomIndex];
+  const themes = Object.keys(themePresets);
+  const randomIndex = Math.floor(Math.random()*themes.length);
+  const randomTheme = themes[randomIndex]
+   
+applyTheme(randomTheme)
 
-        applyTheme(randomTheme)
-        localStorage.setItem("selectedTheme", randomTheme)
-    })
+  localStorage.setItem("themes", randomTheme)
+
+})
+  
 
     // Download Bio
     downloadBtn.addEventListener("click", async()=>{
@@ -248,6 +256,12 @@ function attachPresetEvents(){
     const themeButtons = document.querySelectorAll(".theme-btn")
     themeButtons.forEach(btn =>{
         btn.addEventListener("click", () => {
+
+        //    Remove Active From All Buttons.
+        themeButtons.forEach(b => b.classList.remove("active"));
+
+        btn.classList.add("active")
+
             const theme = btn.dataset.theme;
 
             applyTheme(theme);
