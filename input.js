@@ -10,6 +10,7 @@ const ageInput = document.getElementById("ageinput");
 const clearBtn = document.getElementById("clearBtn");
 const userOutput = document.getElementById("userOutput");
 
+// Theme Toggle
 themeIcon.addEventListener("click", ()=>{
     appState.darkMode = !appState.darkMode;
 
