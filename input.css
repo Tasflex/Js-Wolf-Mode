@@ -49,6 +49,7 @@ body{
     border-radius: 10px;
     box-shadow: 0px 8px 18px rgb(33, 39, 20);
     transition: transform 0.3s ease;
+    overflow-wrap: anywhere;
 }
 /* .container:hover{
     transform: scale(1.05);
